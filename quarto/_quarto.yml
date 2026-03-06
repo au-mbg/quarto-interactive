@@ -1,0 +1,38 @@
+project:
+  type: website
+
+website:
+  title: "Interactive Quarto"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: pages/pyodide.qmd
+        text: Pyodide
+        icon: fa-solid fa-python
+      - href: pages/gradio.qmd
+        text: Gradio
+        icon: fa-solid fa-robot
+      - href: pages/quarto_live.qmd
+        text: Quarto Live
+        icon: fa-solid fa-rocket
+      - href: pages/shiny.qmd
+        text: Shiny
+        icon: fa-solid fa-r-project
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    toc: true
+  live-html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+    toc: true
+
+
+

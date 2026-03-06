@@ -1,0 +1,47 @@
+---
+title: "Pyodide"
+format: html
+filters:
+  - pyodide
+---
+
+This is a pyodide-enabled code cell in a Quarto HTML document.
+
+```{pyodide-python}
+import matplotlib.pyplot as plt
+import numpy as np
+
+def prime(n):
+    """
+    Computes the first n prime numbers. 
+    """
+    primes = [2]
+    cur = 3
+    while len(primes) < n:
+        accept = True
+        limit = np.sqrt(cur)
+        for prime in primes: 
+            if prime > limit:
+                break
+
+            if cur % prime == 0:
+                accept = False
+                break
+
+        if accept: 
+            primes.append(cur)
+
+        cur += 2
+    return primes
+
+primes = prime(1000)
+
+count = np.arange(len(primes))
+
+fig, ax = plt.subplots()
+
+ax.plot(primes, count)
+plt.show()
+```
+
+

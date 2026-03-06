@@ -1,0 +1,43 @@
+---
+title: Python Example
+format: live-html
+---
+
+## Simple Examples
+
+```{pyodide}
+for x in range(5):
+  print(x ** 2)
+```
+
+```{pyodide}
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.random.normal(170, 10, 250)
+plt.hist(x)
+plt.show()
+```
+
+## Exercise Example
+
+```{pyodide}
+#| exercise: ex_1_py
+#| check: true
+n = range(1, 11)
+mean = sum(n)/len(n)
+feedback = None
+if (result == mean):
+  feedback = { "correct": True, "message": "Nice work!" }
+else:
+  feedback = { "correct": False, "message": "That's incorrect, sorry." }
+feedback
+```
+
+Calculate the average of all of the integers from 1 to 10.
+
+```{pyodide}
+#| exercise: ex_1_py
+n = range(1, 11)
+______
+```

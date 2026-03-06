@@ -1,0 +1,26 @@
+---
+title: "Quarto x Gradio Lite"
+
+filters:
+  - gradio
+---
+
+This example is running entirely in your browser. No Python servers were harmed (or needed).
+
+For more detailed examples, please refer to the [live docs](https://quarto-gradio.peter.gy).
+
+```{python}
+#| gr-theme: light
+import gradio as gr
+
+def greet(name):
+    return f"Hello {name}!"
+
+demo = gr.Interface(
+    fn=greet, 
+    inputs="textbox", 
+    outputs="textbox", 
+)
+
+demo.launch()
+```
