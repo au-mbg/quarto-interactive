@@ -1,0 +1,50 @@
+# .github/workflows/pages.yml
+name: Quarto → Pages
+
+on:
+  push:
+    branches: [ "main" ]   # change if your default branch differs
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: "0.8.18"
+
+      # Quarto CLI (no manual apt/wget needed)
+      - uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: uv sync
+        shell: bash
+        run: uv sync
+
+      # Build your site (adjust if your Makefile target differs)
+      - name: Build site
+        shell: bash
+        working-directory: quarto
+        run: uv run quarto render
+              
+      # Upload the built site folder
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: quarto/_site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
