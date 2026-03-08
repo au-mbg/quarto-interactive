@@ -1,3 +1,4 @@
 ---
 title: "Testing Interactive Quarto Elements"
+format: html
 ---

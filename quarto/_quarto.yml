@@ -1,5 +1,6 @@
 project:
   type: website
+  output-dir: _site
 
 website:
   title: "Interactive Quarto"
@@ -10,9 +11,9 @@ website:
       - href: pages/pyodide.qmd
         text: Pyodide
         icon: fa-solid fa-python
-      - href: pages/gradio.qmd
-        text: Gradio
-        icon: fa-solid fa-robot
+      # - href: pages/gradio.qmd
+      #   text: Gradio
+      #   icon: fa-solid fa-robot
       - href: pages/quarto_live.qmd
         text: Quarto Live
         icon: fa-solid fa-rocket
