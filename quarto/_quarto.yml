@@ -20,6 +20,9 @@ website:
       - href: pages/shiny.qmd
         text: Shiny
         icon: fa-solid fa-r-project
+      - href: pages/molstar.qmd
+        text: Mol* Viewer
+        icon: fa-solid fa-flask
 
 format:
   html:
