@@ -31,12 +31,7 @@ format:
       - brand
     css: styles.css
     toc: true
-  live-html:
-    theme:
-      - cosmo
-      - brand
-    css: styles.css
-    toc: true
+
 
 
 

@@ -1,6 +1,12 @@
 ---
 title: Python Example
-format: live-html
+format:
+  live-html:
+      theme:
+        - cosmo
+        - brand
+      css: styles.css
+      toc: true
 ---
 
 ## Simple Examples
