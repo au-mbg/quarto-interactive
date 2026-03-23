@@ -5,10 +5,10 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
-    "gradio>=5.17.0",
+    "gradio>=6.9.0,<7",
     "jupyter>=1.1.1",
     "plotly>=5.24.1",
-    "shinylive>=0.8.5",
+    "shinylive>=0.8.5", "altair>=6.0.0,<7", "vega-datasets>=0.9.0,<0.10",
 ]
 
 [tool.pixi.workspace]

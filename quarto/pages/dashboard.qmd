@@ -8,7 +8,9 @@ import plotly.express as px
 df = px.data.gapminder()
 ```
 
-## Row {height=50%}
+# Page 1
+
+## Row {height=50% .fill}
 
 ```{python}
 #| title: GDP and Life Expectancy 
@@ -20,6 +22,8 @@ px.scatter(
   range_x=[100,100000], range_y=[25,90] 
 )  
 ```
+
+# Page 2
 
 ## Row {height=40%}
 
@@ -36,5 +40,21 @@ px.area(
 px.line(
   df, x="year", y="lifeExp", 
   color="continent", line_group="country"
+)
+```
+
+# Page 3
+
+## Row {height=40%}
+
+```{python}
+#| title: Iowa Electricity
+import altair as alt
+from vega_datasets import data
+source = data.iowa_electricity()
+alt.Chart(source).mark_area(opacity=0.3).encode(
+  x="year:T",
+  y=alt.Y("net_generation:Q").stack(None),
+  color="source:N"
 )
 ```
