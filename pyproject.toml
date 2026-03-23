@@ -10,3 +10,18 @@ dependencies = [
     "plotly>=5.24.1",
     "shinylive>=0.8.5",
 ]
+
+[tool.pixi.workspace]
+channels = ["conda-forge"]
+platforms = ["osx-arm64", "linux-64"]
+
+[tool.pixi.pypi-dependencies]
+quarto-interactive = { path = ".", editable = true }
+
+[tool.pixi.tasks]
+preview = { cmd = "quarto preview ", description = "Preview the project", cwd = "quarto/"}
+render = { cmd = "quarto render ", description = "Render the project", cwd = "quarto/"}
+
+[tool.pixi.dependencies]
+python = "3.12.*"
+quarto = ">=1.8.27,<2"

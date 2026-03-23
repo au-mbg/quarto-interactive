@@ -23,13 +23,15 @@ website:
       - href: pages/molstar.qmd
         text: Mol* Viewer
         icon: fa-solid fa-flask
+      - href: pages/dashboard.qmd
+        text: Dashboard
+        icon: fa-solid fa-table-columns
 
 format:
   html:
     theme:
       - cosmo
       - brand
-    css: styles.css
     toc: true
 
 
